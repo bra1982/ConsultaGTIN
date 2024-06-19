@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/02/01 18:00:34.000.427,=C:\Users\User01\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/02/03 15:02:29.000.376,=C:\Users\User01\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/13 16:07:11.000.488,=D:\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/13 16:08:02.000.109,D:\Sunflower\Programas\ACBr\ConsultaGTIN\Project1.dproj=D:\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/12/13 16:08:37.000.656,=D:\Sunflower\Programas\ACBr\ConsultaGTIN\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

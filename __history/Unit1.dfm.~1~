@@ -1,0 +1,190 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 745
+  ClientWidth = 833
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 40
+    Top = 221
+    Width = 24
+    Height = 13
+    Caption = 'GTIN'
+  end
+  object Label2: TLabel
+    Left = 40
+    Top = 277
+    Width = 46
+    Height = 13
+    Caption = 'Descri'#231#227'o'
+  end
+  object Label3: TLabel
+    Left = 40
+    Top = 332
+    Width = 22
+    Height = 13
+    Caption = 'NCM'
+  end
+  object Label4: TLabel
+    Left = 40
+    Top = 389
+    Width = 25
+    Height = 13
+    Caption = 'CEST'
+  end
+  object edtGTIN: TEdit
+    Left = 40
+    Top = 240
+    Width = 169
+    Height = 21
+    TabOrder = 0
+  end
+  object edtDesc: TEdit
+    Left = 40
+    Top = 296
+    Width = 665
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object edtNCM: TEdit
+    Left = 40
+    Top = 351
+    Width = 281
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object edtCEST: TEdit
+    Left = 40
+    Top = 408
+    Width = 281
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object btnGTIN: TBitBtn
+    Left = 280
+    Top = 221
+    Width = 217
+    Height = 40
+    Caption = 'Pesquisar GTIN'
+    Enabled = False
+    TabOrder = 5
+    OnClick = btnGTINClick
+  end
+  object memoRet: TMemo
+    Left = 0
+    Top = 464
+    Width = 833
+    Height = 281
+    TabStop = False
+    Align = alBottom
+    Lines.Strings = (
+      '')
+    TabOrder = 6
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 833
+    Height = 137
+    Align = alTop
+    Caption = 'Selecione o Certificado Digital A1'
+    TabOrder = 4
+    object Label5: TLabel
+      Left = 40
+      Top = 26
+      Width = 157
+      Height = 13
+      Caption = 'Caminho completo do Certificado'
+    end
+    object Label6: TLabel
+      Left = 40
+      Top = 69
+      Width = 34
+      Height = 13
+      Caption = 'Senha:'
+    end
+    object edtCert: TEdit
+      Left = 40
+      Top = 45
+      Width = 633
+      Height = 21
+      TabOrder = 0
+      OnExit = edtCertExit
+    end
+    object edtSenha: TEdit
+      Left = 40
+      Top = 88
+      Width = 157
+      Height = 21
+      PasswordChar = '*'
+      TabOrder = 2
+      OnExit = edtSenhaExit
+    end
+    object Button1: TButton
+      Left = 679
+      Top = 43
+      Width = 34
+      Height = 25
+      Caption = '...'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object BitBtn1: TBitBtn
+      Left = 312
+      Top = 81
+      Width = 145
+      Height = 35
+      Caption = 'Gravar'
+      TabOrder = 3
+    end
+  end
+  object ACBrGTIN1: TACBrGTIN
+    Configuracoes.Geral.SSLLib = libOpenSSL
+    Configuracoes.Geral.SSLCryptLib = cryOpenSSL
+    Configuracoes.Geral.SSLHttpLib = httpOpenSSL
+    Configuracoes.Geral.SSLXmlSignLib = xsLibXml2
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Arquivos.PathSchemas = 'C:\ACBr\Exemplos\ACBrDFe\Schemas\GTIN\'
+    Configuracoes.Arquivos.AdicionarLiteral = True
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.Certificados.Senha = '081296'
+    Configuracoes.RespTec.IdCSRT = 0
+    Left = 584
+    Top = 120
+  end
+  object OpenDialog1: TOpenDialog
+    Title = 'SELECIONE O CERTIFICADO DIGITAL A1'
+    Left = 576
+    Top = 33
+  end
+end

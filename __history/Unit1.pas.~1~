@@ -1,0 +1,87 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ACBrBase, ACBrDFe, ACBrGTIN,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    edtGTIN: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtDesc: TEdit;
+    Label3: TLabel;
+    edtNCM: TEdit;
+    Label4: TLabel;
+    edtCEST: TEdit;
+    btnGTIN: TBitBtn;
+    ACBrGTIN1: TACBrGTIN;
+    OpenDialog1: TOpenDialog;
+    memoRet: TMemo;
+    GroupBox1: TGroupBox;
+    edtCert: TEdit;
+    edtSenha: TEdit;
+    Button1: TButton;
+    Label5: TLabel;
+    Label6: TLabel;
+    BitBtn1: TBitBtn;
+    procedure btnGTINClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure EnableButtonGTIN();
+    procedure edtCertExit(Sender: TObject);
+    procedure edtSenhaExit(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnGTINClick(Sender: TObject);
+begin
+try
+  ACBrGTIN1.Consultar(edtGTIN.Text);
+  edtDesc.Text:=ACBrGTIN1.WebServices.Consulta.xProd;
+  edtNCM.Text:=ACBrGTIN1.WebServices.Consulta.NCM;
+  edtCEST.Text:=ACBrGTIN1.WebServices.Consulta.CEST;
+
+  memoRet.Lines.Add(IntToStr(ACBrGTIN1.WebServices.Consulta.cStat));
+  memoRet.Lines.Add(ACBrGTIN1.WebServices.Consulta.xMotivo);
+  memoRet.Lines.Add('----------------------------------------------');
+  memoRet.Lines.Add('');
+finally
+  ShowMessage('Erro nos parâmetros');
+
+end;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+OpenDialog1.Execute();
+end;
+
+procedure TForm1.edtCertExit(Sender: TObject);
+begin
+EnableButtonGTIN();
+end;
+
+procedure TForm1.edtSenhaExit(Sender: TObject);
+begin
+EnableButtonGTIN();
+end;
+
+procedure TForm1.EnableButtonGTIN;
+begin
+btnGTIN.Enabled:=((edtCert.Text<>EmptyStr) AND (edtSenha.Text<>EmptyStr));
+end;
+
+end.
